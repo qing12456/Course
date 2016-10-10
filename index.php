@@ -96,7 +96,7 @@ $milk=new\Decorator\Milk();
 $sugar=new \Decorator\Sugar();
 $butter=new \Decorator\Butter();
 
-$coffee->addDecorator($milk);
+$coffee->addDecorator($milk); 
 $coffee->addDecorator($sugar);
 //echo '<br>'.$coffee->coffeeName().$coffee->total().'<br>';
 
