@@ -38,17 +38,18 @@ class Cate{
         $this->_strategy=$strategy;
     }
 }
-$c=new Cate;
-if($_GET['female']){
-    echo "female<br>";
-    $strategy=new \Core\FemaleStrategy();
-}
-elseif ($_GET['male']){
-    echo "Male<br>";
-    $strategy=new \Core\MaleStrategy();
-}
+//$c=new Cate;
+//if($_GET['female']){
+//    echo "female<br>";
+//    $strategy=new \Core\FemaleStrategy();
+//}
+//elseif ($_GET['male']){
+//    echo "Male<br>";
+//    $strategy=new \Core\MaleStrategy();
+//}
 //$c->setStrategy($strategy);
 //$c->index();
+
 
 
 
@@ -76,18 +77,20 @@ class Observer3 implements \Observe\IObserve{
         echo "get food<br>";
     }
 }
-//$e=new Event();
-//$e->addObserver(new Observer1());
-//$e->addObserver(new Observer2());
-//$e->addObserver(new Observer3());
+$e=new Event();
+$e->addObserver(new Observer1());
+$e->addObserver(new Observer2());
+$e->addObserver(new Observer3());
 //$e->trigger();
 
 
+
+
+//装饰者模式
 // beverage 饮料
 //   coffee 咖啡
 //   Condiment 调味料
 //           milk  牛奶      Sugar 糖   Butter 黄油
-
 $coffee=new \Decorator\Coffee();
 $milk=new\Decorator\Milk();
 $sugar=new \Decorator\Sugar();
