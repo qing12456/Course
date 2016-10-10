@@ -35,6 +35,8 @@ final class MySQLi
         return $this->conn->query($sql);
     }
 
+    
+    
     function __destruct()
     {
         $this->conn->close();

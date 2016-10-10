@@ -9,6 +9,7 @@ class Register
     static function set($alias,$object){
         self::$_object[$alias]=$object;
     }
+    
     function _unset($alias){
         unset(self::$_object[$alias]);
     }

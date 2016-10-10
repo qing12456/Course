@@ -10,5 +10,7 @@ class Factory
         $db=MySQLi::getDb();
         Register::set('mysql',$db);
         return $db;
+        
+        
     }
 }
