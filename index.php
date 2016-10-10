@@ -12,20 +12,20 @@ include "Core/Loader.php";
 spl_autoload_register('\Core\Loader::autoload');
 
 //$db=Core\Single::getDb();
-
-//工厂模式
-$user=Factory\UserFactory::createUser('zhangsan',2);
-var_dump($user);
-
-
-//注册树
-$db=\Core\Factory::createDb();
-$db2=\Core\Register::get('mysql');
-$db1=\Core\Register::get('mysql');
-//echo "<pre>";
-//var_dump($db1);
-//echo "</pre>";
-
+//
+////工厂模式
+//$user=Factory\UserFactory::createUser('zhangsan',2);
+////var_dump($user);
+//
+//
+////注册树
+//$db=\Core\Factory::createDb();
+//$db2=\Core\Register::get('mysql');
+//$db1=\Core\Register::get('mysql');
+////echo "<pre>";
+////var_dump($db1);
+////echo "</pre>";
+//
 
 //策略模式
 class Cate{
@@ -76,11 +76,31 @@ class Observer3 implements \Observe\IObserve{
         echo "get food<br>";
     }
 }
-$e=new Event();
-$e->addObserver(new Observer1());
-$e->addObserver(new Observer2());
-$e->addObserver(new Observer3());
-$e->trigger();
+//$e=new Event();
+//$e->addObserver(new Observer1());
+//$e->addObserver(new Observer2());
+//$e->addObserver(new Observer3());
+//$e->trigger();
+
+
+// beverage 饮料
+//   coffee 咖啡
+//   Condiment 调味料
+//           milk  牛奶      Sugar 糖   Butter 黄油
+
+$coffee=new \Decorator\Coffee();
+$milk=new\Decorator\Milk();
+$sugar=new \Decorator\Sugar();
+$butter=new \Decorator\Butter();
+
+$coffee->addDecorator($milk);
+$coffee->addDecorator($sugar);
+echo '<br>'.$coffee->coffeeName().$coffee->total().'<br>';
+
+
+
+
+
 
 
 
