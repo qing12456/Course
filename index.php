@@ -27,7 +27,7 @@ $db1=\Core\Register::get('mysql');
 //echo "</pre>";
 
 
-
+//策略模式
 class Cate{
     protected $_strategy=null;
     function index(){
@@ -47,8 +47,40 @@ elseif ($_GET['male']){
     echo "Male<br>";
     $strategy=new \Core\MaleStrategy();
 }
-$c->setStrategy($strategy);
-$c->index();
+//$c->setStrategy($strategy);
+//$c->index();
+
+
+
+//观察者模式
+class Event extends \Observe\EventGenertor{
+    function trigger(){
+        $this->notify();
+    }
+}
+class Observer1 implements \Observe\IObserve{
+    function update($event = null)
+    {
+        echo "get money<br>";
+    }
+}
+class Observer2 implements \Observe\IObserve{
+    function update($event = null)
+    {
+        echo "get water<br>";
+    }
+}
+class Observer3 implements \Observe\IObserve{
+    function update($event = null)
+    {
+        echo "get food<br>";
+    }
+}
+$e=new Event();
+$e->addObserver(new Observer1());
+$e->addObserver(new Observer2());
+$e->addObserver(new Observer3());
+$e->trigger();
 
 
 
