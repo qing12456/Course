@@ -14,6 +14,14 @@ spl_autoload_register('\Core\Loader::autoload');
 //$db=Core\Single::getDb();
 
 
+//$user=Factory\UserFactory::createUser('zhangsan',2);
+//var_dump($user);
 
-$user=Factory\UserFactory::createUser('zhangsan',2);
-var_dump($user);
+$user=Factory\UserFactory::createUser('zhansan',2);
+$db=\Core\Factory::createDb();
+$db2=\Core\Register::get('mysql');
+$db1=\Core\Register::get('mysql');
+echo "<pre>";
+var_dump($db1);
+echo "</pre>";
+
