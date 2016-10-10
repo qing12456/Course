@@ -5,6 +5,7 @@ namespace Core;
 final class Single
 {
     private static $db=null;
+    private $conn;
 
     //第一步 构造函数私有
     private function __construct()
