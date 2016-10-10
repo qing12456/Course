@@ -5,7 +5,7 @@
 //2.类名的首字母必须大写
 //3.所有的类名必须载入，不能include或者request
 //4.
-
+header("Content-type:text/html;charset=utf-8");
 
 define('APP',__DIR__);
 include "Core/Loader.php";
@@ -98,10 +98,16 @@ $butter=new \Decorator\Butter();
 
 $coffee->addDecorator($milk);
 $coffee->addDecorator($sugar);
-echo '<br>'.$coffee->coffeeName().$coffee->total().'<br>';
+//echo '<br>'.$coffee->coffeeName().$coffee->total().'<br>';
 
 
+//数据映射模式
+$student=\Core\Factory::getStudent(2);
+$student->stu_name='赵敏';
+$student->save();
 
+$student=\Core\Register::get(2);
+echo $student->stu_name;
 
 
 
