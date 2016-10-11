@@ -19,4 +19,9 @@ class Factory
         }
         return $student;
     }
+    
+    public static function getConfig(){
+        $config=new Config(APP.'/configs');
+        return $config;
+    }
 }
