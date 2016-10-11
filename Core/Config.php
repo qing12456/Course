@@ -9,7 +9,6 @@
 
 namespace Core;
 
-
 class Config implements \ArrayAccess{
     
     protected $path;
