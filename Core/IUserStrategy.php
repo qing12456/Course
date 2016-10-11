@@ -15,3 +15,8 @@ interface IUserStrategy
     function showAd();
     function showCategory();
 }
+
+interface IStudentProxy{
+    function getStudentName($id);
+    function setStudentName($id,$name);
+}
